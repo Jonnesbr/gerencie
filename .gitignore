@@ -2,3 +2,6 @@
 .gitkeep
 
 cache/volt/*
+public/assets/components/*
+public/assets/node_modules/*
+public/assets/.sass-cache/*

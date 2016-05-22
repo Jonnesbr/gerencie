@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/**
+ * Folha de estilos - Gerencie
+ * Desenvolvida por João Paulo
+ */
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}
