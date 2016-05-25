@@ -10,6 +10,7 @@ try {
 
     /**
      * Read the configuration
+     * Arquivo de configuração local - config.ini
      */
     $config = new ConfigIni(APP_PATH . 'app/config/config.ini');
     if (is_readable(APP_PATH . 'app/config/config.ini.dev')) {
@@ -29,8 +30,6 @@ try {
 
     $application = new Application($di);
 
-//    echo"<pre>";
-//    var_dump($application);exit;
     echo $application->handle()->getContent();
 } catch (Exception $e){
     echo $e->getMessage() . '<br>';

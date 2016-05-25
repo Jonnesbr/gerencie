@@ -1,7 +1,22 @@
+# Diretório de configuração do projeto gerado para uso da IDE PhpStorm 2016.1
 .idea
+
+# Arquivo gerado para diretórios vazios serem versionados
 .gitkeep
 
+# Adicionado para não subir dados de conexão do DB
+app/config/config_local.ini
+
+# Diretório onde é armazenado o cache das rotas acionadas
 cache/volt/*
+
+# Diretórios do Assets que não precisam ser versionados, servem apenas para execução do bower e grunt.
 public/assets/components/*
 public/assets/node_modules/*
 public/assets/.sass-cache/*
+
+# Diretório do Phalcon Dev Tools (Opcional)
+vendor/*
+
+# Gerado pela instalação via composer
+composer.lock
