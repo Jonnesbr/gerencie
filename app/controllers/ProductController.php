@@ -1,6 +1,6 @@
 <?php
 
-class ProductsController extends \Phalcon\Mvc\Controller
+class ProductController extends \Phalcon\Mvc\Controller
 {
 
     public function initialize()
@@ -16,7 +16,7 @@ class ProductsController extends \Phalcon\Mvc\Controller
 
     public function newAction()
     {
-        $this->view->form = new ProductsForm(null, array('edit' => true));
+        $this->view->form = new ProductForm(null, array('edit' => true));
     }
 
     public function createAction()

@@ -4,7 +4,7 @@ use Phalcon\Mvc\Model;
 use Phalcon\Mvc\Model\Validator\Email as EmailValidator;
 use Phalcon\Mvc\Model\Validator\Uniqueness as UniquenessValidator;
 
-class Users extends Model
+class User extends Model
 {
     public function validation()
     {

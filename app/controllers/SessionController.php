@@ -18,7 +18,7 @@ class SessionController extends ControllerBase
         }
     }
 
-    private function _registerSession(Users $user)
+    private function _registerSession(User $user)
     {
         $this->session->set(
             'auth',
@@ -37,7 +37,7 @@ class SessionController extends ControllerBase
             $email    = $this->request->getPost('email');
             $password = $this->request->getPost('pass');
 
-            $user = Users::findFirst(
+            $user = User::findFirst(
                 array(
                     "email = :email: AND password = :password:",
                     'bind' => array('email' => $email, 'password' => sha1($password))
@@ -46,8 +46,7 @@ class SessionController extends ControllerBase
             if ($user != false) {
                 $this->_registerSession($user);
                 $this->flash->success('Bem vindo ' . $user->name . '!!');
-
-                return $this->forward('products/index');
+                return $this->forward('category/index');
             }
 
             $this->flash->error('Dados Inválidos');
