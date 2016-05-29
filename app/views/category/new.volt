@@ -1,7 +1,7 @@
 {{ form("category/create", "class": "form-inline", "autocomplete": "off") }}
-<div align="right">
-    {{ link_to("category", "Cancelar", "class": "btn btn-primary") }}
-</div>
+{#<div align="right">#}
+    {#{{ link_to("category", "Cancelar", "class": "btn btn-primary") }}#}
+{#</div>#}
     {{ content() }}
     <div class="page-header">
         <h2>Cadastrar nova categoria</h2>
@@ -9,5 +9,7 @@
     <div class="form-group">
         {{ text_field("name", "size": 24, "maxlength": 80, "class": "form-control", "placeholder": "Nome") }}
     </div>
+<br><br>
         {{ submit_button("Salvar", "class": "btn btn-success") }}
+        {{ link_to("category", "Cancelar", "class": "btn btn-primary") }}
 </form>

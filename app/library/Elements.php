@@ -12,22 +12,22 @@ class Elements extends Component
 
     private $_headerMenu = array(
         'navbar-left' => array(
-            'index' => array(
-                'caption' => 'Home',
-                'action' => ''
+            'product' => array(
+                'caption' => 'Produtos',
+                'action' => 'index'
             ),
-//            'category' => array(
-//                'caption' => 'Categorias',
-//                'action' => 'index'
-//            ),
+            'category' => array(
+                'caption' => 'Categorias',
+                'action' => 'index'
+            ),
             'about' => array(
-                'caption' => 'About',
+                'caption' => 'Sobre',
                 'action' => 'index'
             ),
         ),
         'navbar-right' => array(
             'session' => array(
-                'caption' => 'Entrar/Sair',
+                'caption' => 'Entrar',
                 'action' => 'index'
             ),
         )
@@ -57,11 +57,12 @@ class Elements extends Component
         $auth = $this->session->get('auth');
         if ($auth) {
             $this->_headerMenu['navbar-right']['session'] = array(
-                'caption' => 'Log Out',
+                'caption' => 'Sair',
                 'action' => 'end'
             );
         } else {
-            unset($this->_headerMenu['navbar-left']['invoices']);
+            unset($this->_headerMenu['navbar-left']['product']);
+            unset($this->_headerMenu['navbar-left']['category']);
         }
 
         $controllerName = $this->view->getControllerName();

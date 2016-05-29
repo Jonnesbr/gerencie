@@ -7,7 +7,7 @@ class SessionController extends ControllerBase
 {
     public function initialize()
     {
-        $this->tag->setTitle('Login/Logout');
+        $this->tag->setTitle('Login');
         parent::initialize();
     }
 
@@ -15,6 +15,8 @@ class SessionController extends ControllerBase
     {
         if (!$this->request->isPost()) {
             $this->flash->notice('Tela de Login');
+            $this->tag->setDefault('email', 'jpaulo.bcc@gmail.com');
+            $this->tag->setDefault('password', '');
         }
     }
 

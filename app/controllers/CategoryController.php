@@ -46,7 +46,7 @@ class CategoryController extends ControllerBase
 
         $pagintor = new Paginator(array(
             "data"  => $category,
-            "limit" => 2,
+            "limit" => 10,
             "page"  => $numberPage
         ));
 
@@ -91,6 +91,88 @@ class CategoryController extends ControllerBase
         $form->clear();
 
         $this->flash->success('Categoria Cadastrada com sucesso');
+        return $this->forward('category/index');
+    }
+
+    /**
+     * Antes de editar categoria, é verificado se o ID informado existe, se sim, é carregado CategoryForm como edição.
+     *
+     * @param string $argId
+     */
+    public function editAction($argId)
+    {
+        if (!$this->request->isPost()) {
+            $category = Category::findFirstById($argId);
+            if(!$category) {
+                $this->flash->error("Categoria não encontrada");
+                return $this->forward('category/index');
+            }
+
+            $this->view->form = new CategoryForm($category, array('edit' => true));
+        }
+    }
+
+    /**
+     * Salva a categoria que foi carregada para edição, após validação (editAction)
+     */
+    public function saveAction()
+    {
+        if (!$this->request->isPost()) {
+            return $this->forward('category/index');
+        }
+
+        $id = $this->request->getPost("id", "int");
+
+        $category = Category::findFirstById($id);
+        if (!$category) {
+            $this->flash->error('Categoria não existente');
+            return $this->forward('category/index');
+        }
+
+        $form = new CategoryForm;
+
+        $data = $this->request->getPost();
+        if (!$form->isValid($data, $category)) {
+            foreach ($form->getMessages() as $message) {
+                $this->flash->error($message);
+            }
+            return $this->forward('category/new');
+        }
+
+        if ($category->save() == false) {
+            foreach ($category->getMessages() as $message) {
+                    $this->flash->error($message);
+            }
+            return $this->forward('category/new');
+        }
+
+        $form->clear();
+
+        $this->flash->success('Categoria atualizada com sucesso');
+        return $this->forward('category/index');
+    }
+
+    /**
+     * Excluir categoria
+     *
+     * @param string $argId
+     */
+    public function deleteAction($argId)
+    {
+        $category = Category::findFirstById($argId);
+        if (!$category) {
+            $this->flash->error('Categoria não encontrada');
+            return $this->forward('category/index');
+        }
+
+        if (!$category->delete()) {
+            foreach ($category->getMessages() as $message) {
+                $this->flash->error($message);
+            }
+            return $this->forward('category/search');
+        }
+
+        $this->flash->success('Categoria deletada com sucesso');
         return $this->forward('category/index');
     }
 }
