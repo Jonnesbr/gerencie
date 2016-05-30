@@ -35,7 +35,7 @@ class Elements extends Component
 
     private $_tabs = array(
         'Produtos' => array(
-            'controller' => 'products',
+            'controller' => 'product',
             'action' => 'index',
             'any' => true
         ),

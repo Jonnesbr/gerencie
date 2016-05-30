@@ -8,3 +8,7 @@
         {{ link_to('session', 'Acessar', 'class': 'btn btn-primary btn-large btn-success') }}
     </div>
 </div>
+
+<footer class="footer">
+    <p>&copy; João Paulo 2016</p>
+</footer>

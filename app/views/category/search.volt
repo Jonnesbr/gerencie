@@ -1,5 +1,14 @@
 {{ content() }}
 
+<ul class="pager">
+    <li class="previous">
+        {{ link_to("category", "&larr; Voltar") }}
+    </li>
+    <li class="next">
+        {{ link_to("category/new", "Cadastrar") }}
+    </li>
+</ul>
+
 {% for category in page.items %}
     {% if loop.first %}
 <table class="table table-bordered table-striped table-responsive" align="center">

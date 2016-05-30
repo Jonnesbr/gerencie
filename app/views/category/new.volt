@@ -1,7 +1,5 @@
 {{ form("category/create", "class": "form-inline", "autocomplete": "off") }}
-{#<div align="right">#}
-    {#{{ link_to("category", "Cancelar", "class": "btn btn-primary") }}#}
-{#</div>#}
+
     {{ content() }}
     <div class="page-header">
         <h2>Cadastrar nova categoria</h2>

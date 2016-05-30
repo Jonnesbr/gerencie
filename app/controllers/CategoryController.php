@@ -3,6 +3,11 @@
 use Phalcon\Mvc\Model\Criteria;
 use Phalcon\Paginator\Adapter\Model as Paginator;
 
+/**
+ * Class CategoryController
+ *
+ * Gerenciamento de todas as operações do CRUD de Categoria
+ */
 class CategoryController extends ControllerBase
 {
     public function initialize()
@@ -46,7 +51,7 @@ class CategoryController extends ControllerBase
 
         $pagintor = new Paginator(array(
             "data"  => $category,
-            "limit" => 10,
+            "limit" => 5,
             "page"  => $numberPage
         ));
 
@@ -90,12 +95,12 @@ class CategoryController extends ControllerBase
 
         $form->clear();
 
-        $this->flash->success('Categoria Cadastrada com sucesso');
+        $this->flash->success('Categoria cadastrada com sucesso');
         return $this->forward('category/index');
     }
 
     /**
-     * Antes de editar categoria, é verificado se o ID informado existe, se sim, é carregado CategoryForm como edição.
+     * Antes de editar categoria, é verificado se o ID informado existe, se sim, é carregado CategoryForm.
      *
      * @param string $argId
      */
@@ -136,7 +141,7 @@ class CategoryController extends ControllerBase
             foreach ($form->getMessages() as $message) {
                 $this->flash->error($message);
             }
-            return $this->forward('category/new');
+            return $this->forward('category/edit' . $id);
         }
 
         if ($category->save() == false) {
@@ -172,7 +177,7 @@ class CategoryController extends ControllerBase
             return $this->forward('category/search');
         }
 
-        $this->flash->success('Categoria deletada com sucesso');
+        $this->flash->success('Categoria excluido com sucesso');
         return $this->forward('category/index');
     }
 }

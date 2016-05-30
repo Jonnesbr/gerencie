@@ -1,6 +1,8 @@
 <?php
 
-class Products extends \Phalcon\Mvc\Model
+use \Phalcon\Mvc\Model;
+
+class Product extends Model
 {
 
     /**
@@ -34,20 +36,18 @@ class Products extends \Phalcon\Mvc\Model
     public $status;
 
     /**
-     * Returns table name mapped in the model.
-     *
-     * @return string
+     * Initialize method for model.
      */
-    public function getSource()
+    public function initialize()
     {
-        return 'products';
+        $this->belongsTo('category_id', 'Category', 'id', array('alias' => 'Category'));
     }
 
     /**
      * Allows to query a set of records that match the specified conditions
      *
      * @param mixed $parameters
-     * @return Products[]
+     * @return product[]
      */
     public static function find($parameters = null)
     {
@@ -58,11 +58,34 @@ class Products extends \Phalcon\Mvc\Model
      * Allows to query the first record that match the specified conditions
      *
      * @param mixed $parameters
-     * @return Products
+     * @return product
      */
     public static function findFirst($parameters = null)
     {
         return parent::findFirst($parameters);
+    }
+
+    /**
+     * Returns a human representation of 'active'
+     *
+     * @return string
+     */
+    public function getActiveDetail()
+    {
+        if ($this->status == '1') {
+            return 'Ativo';
+        }
+        return 'Inativo';
+    }
+
+    /**
+     * Returns table name mapped in the model.
+     *
+     * @return string
+     */
+    public function getSource()
+    {
+        return 'product';
     }
 
 }

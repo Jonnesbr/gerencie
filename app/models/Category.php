@@ -1,6 +1,8 @@
 <?php
 
-class Category extends \Phalcon\Mvc\Model
+use \Phalcon\Mvc\Model;
+
+class Category extends Model
 {
 
     /**
