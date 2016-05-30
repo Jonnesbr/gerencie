@@ -29,8 +29,8 @@
         <td>{{ product.getCategory().name }}</td>
         <td>${{ "%.2f"|format(product.price) }}</td>
         <td>{{ product.getActiveDetail() }}</td>
-        <td width="7%">{{ link_to("product/edit/" ~ product.id, '<i class="glyphicon glyphicon-edit"></i> Editar', "class": "btn btn-default") }}</td>
-        <td width="7%">{{ link_to("product/delete/" ~ product.id, '<i class="glyphicon glyphicon-remove"></i> Excluir', "class": "btn btn-default") }}</td>
+        <td width="7%">{{ link_to("product/edit/" ~ product.id, '<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar', "class": "btn btn-primary") }}</td>
+        <td width="7%">{{ link_to("product/delete/" ~ product.id, '<i class="fa fa-trash" aria-hidden="true"></i> Excluir', "class": "btn btn-danger") }}</td>
     </tr>
     {% if loop.last %}
         </tbody>

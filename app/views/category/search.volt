@@ -23,8 +23,8 @@
         <tr>
             <td>{{ category.id }}</td>
             <td>{{ category.name }}</td>
-            <td width="7%">{{ link_to("category/edit/" ~ category.id, '<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar', "class": "btn btn-default") }}</td>
-            <td width="7%">{{ link_to("category/delete/" ~ category.id, '<i class="fa fa-trash" aria-hidden="true"></i> Excluir', "class": "btn btn-default") }}</td>
+            <td width="7%">{{ link_to("category/edit/" ~ category.id, '<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar', "class": "btn btn-primary") }}</td>
+            <td width="7%">{{ link_to("category/delete/" ~ category.id, '<i class="fa fa-trash" aria-hidden="true"></i> Excluir', "class": "btn btn-danger") }}</td>
         </tr>
     {% if loop.last %}
     </tbody>

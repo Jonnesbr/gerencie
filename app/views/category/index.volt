@@ -1,8 +1,14 @@
+
 {{ content() }}
 
-<div align="right">
-    {{ link_to("category/new", "Criar uma nova Categoria", "class": "btn btn-primary") }}
-</div>
+<ul class="pager">
+    <li class="previous">
+        {{ link_to("", "&larr; Ínicio") }}
+    </li>
+    <li class="next">
+        {{ link_to("category/new", "Cadastrar") }}
+    </li>
+</ul>
 
 {{ form("category/search", "autocomplete": "off", "class": "form-inline") }}
 

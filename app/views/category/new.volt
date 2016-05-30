@@ -9,5 +9,5 @@
     </div>
 <br><br>
         {{ submit_button("Salvar", "class": "btn btn-success") }}
-        {{ link_to("category", "Cancelar", "class": "btn btn-primary") }}
+        {{ link_to("category", "Cancelar", "class": "btn btn-default") }}
 </form>

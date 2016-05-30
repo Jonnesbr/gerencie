@@ -1,9 +1,14 @@
 
 {{ content() }}
 
-<div align="right">
-    {{ link_to("product/new", "Criar um novo Produto", "class": "btn btn-primary") }}
-</div>
+<ul class="pager">
+    <li class="previous">
+        {{ link_to("", "&larr; Ínicio") }}
+    </li>
+    <li class="next">
+        {{ link_to("product/new", "Cadastrar") }}
+    </li>
+</ul>
 
 {{ form("product/search", "autocomplete": "off", "class": "form-inline") }}
 

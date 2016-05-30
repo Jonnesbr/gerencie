@@ -22,7 +22,7 @@
         {% endfor %}
             <div class="form-group">
                 {{ submit_button("Salvar", "class": "btn btn-success") }}
-                {{ link_to("product", "Cancelar", "class": "btn btn-primary") }}
+                {{ link_to("product", "Cancelar", "class": "btn btn-default") }}
             </div>
         </div>
 
