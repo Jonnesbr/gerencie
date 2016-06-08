@@ -1,29 +1,10 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Este projeto foi desenvolvido utilizando o framework [Phalcon](https://phalconphp.com/pt/) para fins didáticos.
 
-### What is this repository for? ###
+### O que preciso para rodar essa aplicação? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* [Phalcon](https://phalconphp.com/pt/) Versão 2.0
+* PHP 5.5.x/5.6.x
+* [Grunt](http://grunt.io) (Task Manager)
+* Banco de Dados MySQL

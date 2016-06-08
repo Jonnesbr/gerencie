@@ -14,7 +14,6 @@ class SessionController extends ControllerBase
     public function indexAction()
     {
         if (!$this->request->isPost()) {
-            $this->flash->notice('Tela de Login');
             $this->tag->setDefault('email', 'jpaulo.bcc@gmail.com');
             $this->tag->setDefault('password', '');
         }
