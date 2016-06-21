@@ -6,5 +6,6 @@ Este projeto foi desenvolvido utilizando o framework [Phalcon](https://phalconph
 
 * [Phalcon](https://phalconphp.com/pt/) Versão 2.0
 * PHP 5.5.x/5.6.x
-* [Grunt](http://grunt.io) (Task Manager)
-* Banco de Dados MySQL
+* [Bower](https://bower.io/)
+* [Grunt](http://grunt.io)
+* MySQL
