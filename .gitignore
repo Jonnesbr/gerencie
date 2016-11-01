@@ -20,3 +20,10 @@ vendor/*
 
 # Gerado pela instalação via composer
 composer.lock
+composer.phar
+
+# Arquivo .conf
+gerencie.conf
+
+# SQL local
+sql/gerencie.sql
