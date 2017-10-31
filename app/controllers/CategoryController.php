@@ -177,7 +177,7 @@ class CategoryController extends ControllerBase
             return $this->forward('category/search');
         }
 
-        $this->flash->success('Categoria excluido com sucesso');
+        $this->flash->success('Categoria excluida com sucesso');
         return $this->forward('category/index');
     }
 }
